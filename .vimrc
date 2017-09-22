@@ -29,9 +29,14 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " Show tree pane
 Plugin 'scrooloose/nerdtree'
+" Tree pane with git 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Indentation line
+Plugin 'Yggdroot/indentLine'
 
 " Git support
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -56,7 +61,7 @@ set laststatus=2
 set number
 
 let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_section_y = '%{fugitive#statusline()} BN: %{bufnr("%")}'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_colors'
 
@@ -67,3 +72,5 @@ autocmd vimenter * wincmd p
 " This will exit both NERDTree and VIM
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Customization for Yggdroot/indentLine
+set shiftwidth=4
