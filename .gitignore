@@ -9,3 +9,10 @@
 
 # Ignore SVN files
 .svn
+
+# Ignore docker files
+.dockerfile.swp
+
+# Ignore nodes_module
+node_modules/
+
