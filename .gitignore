@@ -16,3 +16,9 @@
 # Ignore nodes_module
 node_modules/
 
+# Ignore JetBrains family IDE
+.idea/
+
+# For python
+__pycache__/
+
