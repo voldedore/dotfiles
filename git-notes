@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd ~/notes
 
 CURRENT_STATUS=$(git status -s)
@@ -10,3 +12,4 @@ if [[ "$CURRENT_STATUS" != "" ]]; then
 else
   echo $(date) "No changes found"
 fi
+
