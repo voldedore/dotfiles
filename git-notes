@@ -1,0 +1,12 @@
+cd ~/notes
+
+CURRENT_STATUS=$(git status -s)
+
+if [[ "$CURRENT_STATUS" != "" ]]; then
+  echo $(date) "Changes found"
+  git add -A
+  git commit -m "Automatically update"
+  git push
+else
+  echo $(date) "No changes found"
+fi
