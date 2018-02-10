@@ -8,7 +8,7 @@ if [[ "$CURRENT_STATUS" != "" ]]; then
   echo $(date) "Changes found"
   git add -A
   git commit -m "Automatically update"
-  git push
+  git push origin master
 else
   echo $(date) "No changes found"
 fi
