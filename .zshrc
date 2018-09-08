@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 alias vi="vim"
 alias ll="ls -alh"
 alias l="ls -lh"
+alias zup="xrdb ~/.Xresources"
 
 #
 # ### Prompt components
