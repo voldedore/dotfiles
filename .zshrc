@@ -89,6 +89,7 @@ alias vi="vim"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
+alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/.git/ --work-tree=$HOME'
 
 #
 # ### Prompt components
