@@ -31,7 +31,7 @@ font pango:Noto Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -173,11 +173,11 @@ bindsym $mod+r mode "resize"
 
 ### GAPS ###
 gaps inner 5
-gaps outer 5
+gaps outer 0
 for_window [class="^.*"] border pixel 0 
 
 ### Multi monitors ###
-exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 && xrandr --output LVDS1 --mode 1366x768 --left-of HDMI1
+exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 && sleep 1 && xrandr --output HDMI1 --mode 1920x1080 --right-of LVDS1
 
 ### Polybar ###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -187,3 +187,33 @@ exec xcompmgr -c -f -n
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+# Since Dell Vostro 3450 play/pause is combined
+# bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Sreen brightness controls
+# Since this is working so comment it
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec $HOME/.config/i3/toggletouchpad.sh # toggle touchpad
+
+# This disable capslock behaviour and change it to esc 
+exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch 
+exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+
+# Print screen
+# Multi-screen screenshots with scrot
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+
+# OSX-like area selection screenshots
+bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+
+# Lock screen shortkey
+bindsym Mod4+l exec i3lock
+
