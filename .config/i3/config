@@ -218,5 +218,5 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 bindsym Mod4+l exec i3lock
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill wallpaper.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /home/thevinh/Pictures/Wallpapers/wallpaper.jpg
 
