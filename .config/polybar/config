@@ -173,8 +173,9 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ; label-separator = |
 
 ; WS Icons
-ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+;ws-icon-2 = 3;
 
 [module/mpd]
 type = internal/mpd
@@ -193,7 +194,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = 
 
 bar-width = 10
 bar-indicator = |
@@ -217,7 +218,7 @@ interval = 0.5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = CPU %percentage:2%%
+label =  %percentage:2%%
 
 [module/memory]
 type = internal/memory
@@ -225,7 +226,7 @@ interval = 0.5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = RAM %percentage_used%%
+label =  %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -234,7 +235,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid% (%signal%%) - %local_ip% 
+label-connected =  %essid% (%signal%%) - %local_ip% 
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -267,7 +268,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1 
 
 date =
 date-alt = " %Y-%m-%d"
@@ -285,13 +286,13 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 10 
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -299,7 +300,7 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+bar-volume-gradient = true
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
@@ -312,7 +313,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -352,26 +353,26 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 =  
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-label-full = Fully charged
-label-charging = Charging %percentage%%
-label-discharging = Discharging %percentage%%
+label-full =  100%
+label-charging =  %percentage%%
+label-discharging = %percentage%%
 
 [module/temperature]
 type = internal/temperature
@@ -409,10 +410,12 @@ label-close-foreground = #dddddd
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 =  reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 =  power off
-menu-0-1-exec = menu-open-2
+menu-0-0 =  lock
+menu-0-0-exec = i3lock
+menu-0-1 =  reboot
+menu-0-1-exec = menu-open-1
+menu-0-2 =  power off
+menu-0-2-exec = menu-open-2
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
