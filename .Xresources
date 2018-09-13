@@ -17,3 +17,7 @@ URxvt.color4: #1D99F3
 ! Disable scrollbar
 URxvt.scrollBar: false
 
+! Test ibus with urxvt
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
