@@ -179,7 +179,10 @@ gaps outer 0
 for_window [class="^.*"] border pixel 0 
 
 ### Multi monitors ###
-exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 && sleep 1 && xrandr --output HDMI1 --mode 1920x1080 --right-of LVDS1
+# exec --no-startup-id xrandr --output LVDS1 --mode 1366x768 && sleep 1 && xrandr --output HDMI1 --mode 1920x1080 --right-of LVDS1
+exec --no-startup-id xrandr --newmode "1600x900_60.00" 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
+exec --no-startup-id xrandr --addmode HDMI1 "1600x900_60.00"
+
 
 ### Polybar ###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -221,6 +224,16 @@ bindsym Mod4+l exec i3lock
 
 # Set wallpaper
 exec --no-startup-id sleep 1 && feh --bg-fill /home/thevinh/Pictures/Wallpapers/wallpaper.jpg
+
+# Assign applications to appropriate workspaces
+assign [class="Chromium"] 2
+assign [class="jetbrains-idea"] 1
+assign [class="Spotify"] 0
+assign [class="Telegram"] 9
+assign [class="Rambox"] 9
+assign [class="dolphin"] 8
+
+#bindsym $mod+x debuglog toggle
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)

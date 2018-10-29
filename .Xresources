@@ -1,5 +1,5 @@
 ! Font
-URxvt.font: xft:Source Code Pro Medium:pixelsize=12:antialias=true:hinting=true,xft:SauceCodePro Nerd Font Mono:size=9:antialias=true,xft:Inconsolata\ for\ Powerline
+URxvt.font: xft:Hack:pixelsize=12,xft:SauceCodePro Nerd Font Mono:size=9:antialias=true,xft:Inconsolata\ for\ Powerline
 URxvt.letterSpace: -1
 
 ! Color
