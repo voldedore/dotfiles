@@ -10,7 +10,7 @@ export PATH="${PATH}:$HOME/bin"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="custom-powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
