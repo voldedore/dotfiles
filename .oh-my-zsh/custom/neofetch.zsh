@@ -1,4 +1,4 @@
 # This will create neofetch output everytime zsh is launched
 
-neofetch
+neofetch --disable public_ip
 
