@@ -4,7 +4,7 @@ URxvt.letterSpace: -1
 
 ! Color
 URxvt.depth: 32
-URxvt.background: [40]#232629
+URxvt.background: [99]#232629
 URxvt.foreground: #FCFCFC
 URxvt.cursorColor: #7F8C8D
 URxvt.pointerColor: #000000
