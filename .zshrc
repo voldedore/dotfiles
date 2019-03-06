@@ -54,7 +54,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,6 +91,7 @@ alias ll="ls -alh"
 alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
 alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/.git/ --work-tree=$HOME'
+alias pwa='cd /run/media/thevinh/WORKS/PROJECTS/VNPT/00.SRC/pwa-his'
 
 #
 # ### Prompt components
@@ -111,7 +112,9 @@ DEFAULT_USER=thevinh
 # NOTE: This is applied only to powerlevel9k theme
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='‣ '
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir dir_writable rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time load ram)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+DISABLE_UNTRACKED_FILES_DIRTY="true"
