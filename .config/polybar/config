@@ -228,13 +228,13 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ; label-separator = |
 
 ; WS Icons
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = 7;
+ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
@@ -314,7 +314,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp2s0
+interface = lan1
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -433,8 +433,8 @@ animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
 label-full =  100%
-label-charging =  %percentage%%
-label-discharging = %percentage%%
+label-charging =  %percentage%% (%consumption%W)
+label-discharging = %percentage%% (%consumption%W)
 
 [module/temperature]
 type = internal/temperature

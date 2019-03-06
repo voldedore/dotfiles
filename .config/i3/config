@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -64,10 +64,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move workspace to output left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -189,10 +189,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec xcompmgr -c -f -n
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 # Since Dell Vostro 3450 play/pause is combined
@@ -220,18 +219,23 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 # Lock screen shortkey
-bindsym Mod4+l exec i3lock
+bindsym Mod4+Escape exec ~/bin/lock.sh
 
 # Set wallpaper
-exec --no-startup-id sleep 1 && feh --bg-fill /home/thevinh/Pictures/Wallpapers/wallpaper.jpg
+exec --no-startup-id sleep 3 && feh --bg-fill /home/thevinh/Pictures/Wallpapers/wallpaper.jpg /home/thevinh/Pictures/Wallpapers/wallpaper_v.png
 
 # Assign applications to appropriate workspaces
 assign [class="Chromium"] 2
 assign [class="jetbrains-idea"] 1
 assign [class="Spotify"] 0
-assign [class="Telegram"] 9
 assign [class="Rambox"] 9
+assign [class="Telegram"] 9
+assign [class="libreoffice"] 7
 assign [class="dolphin"] 8
+assign [class="google-chrome"] 2
+
+workspace "1" output HDMI1
+workspace "9" output HDMI1
 
 #bindsym $mod+x debuglog toggle
 
@@ -243,6 +247,8 @@ exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 
+# Customized i3 colors
+client.focused #5398a9 #525659 #9d9d9d #2e9ef4 #285577
 
 ## Avoid tiling popups, dropdown windows from plasma
 
@@ -263,4 +269,8 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 
 for_window [class="Plasmoidviewer"] floating enable; border none
+
+## Avoid auto focusing to plasma shell (especially when yarn start build success notification appears)
+
+no_focus [class="plasmashell"]
 
