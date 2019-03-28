@@ -44,6 +44,15 @@ Plugin 'airblade/vim-gitgutter'
 " fzf Fuzzy find
 Plugin 'junegunn/fzf.vim'
 
+" multiple-cursor
+Plugin 'terryma/vim-multiple-cursors'
+
+" Surroundings
+Plugin 'tpope/vim-surround'
+
+" Dracula Theme
+Plugin 'dracula/vim'
+
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -65,6 +74,8 @@ filetype plugin indent on    " required
 
 set laststatus=2
 set number
+set hlsearch
+set incsearch
 
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = '%{fugitive#statusline()} BN: %{bufnr("%")}'
@@ -83,9 +94,13 @@ set shiftwidth=4
 
 " Customization for airblade/vim-gitgutter
 set updatetime=100
-highlight GitGutterAdd		guifg=#009900 guibg=#232629 ctermfg=2 ctermbg=0
-highlight GitGutterChange	guifg=#0044dd guibg=#232629 ctermfg=3 ctermbg=0
-highlight GitGutterDelete	guifg=#ff2222 guibg=#232629 ctermfg=1 ctermbg=0
+highlight GitGutterAdd		guifg=#009900 ctermfg=2
+highlight GitGutterChange	guifg=#0044dd ctermfg=4
+highlight GitGutterDelete	guifg=#ff2222 ctermfg=1
 
 " Map Ctrl F for fzf :Files
 map <C-f> :Files<CR>
+
+" Syntax ON
+syntax on
+color dracula
