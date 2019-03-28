@@ -41,6 +41,9 @@ Plugin 'tpope/vim-fugitive'
 " Git Gutter (Git signs on the line column)
 Plugin 'airblade/vim-gitgutter'
 
+" fzf Fuzzy find
+Plugin 'junegunn/fzf.vim'
+
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -83,3 +86,6 @@ set updatetime=100
 highlight GitGutterAdd		guifg=#009900 guibg=#232629 ctermfg=2 ctermbg=0
 highlight GitGutterChange	guifg=#0044dd guibg=#232629 ctermfg=3 ctermbg=0
 highlight GitGutterDelete	guifg=#ff2222 guibg=#232629 ctermfg=1 ctermbg=0
+
+" Map Ctrl F for fzf :Files
+map <C-f> :Files<CR>
