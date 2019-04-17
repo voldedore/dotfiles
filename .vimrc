@@ -53,6 +53,9 @@ Plugin 'tpope/vim-surround'
 " Dracula Theme
 Plugin 'dracula/vim'
 
+" You complete me
+Plugin 'Valloric/YouCompleteMe'
+
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -74,6 +77,7 @@ filetype plugin indent on    " required
 
 set laststatus=2
 set number
+set relativenumber
 set hlsearch
 set incsearch
 
