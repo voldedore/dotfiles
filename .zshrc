@@ -3,7 +3,10 @@
 export PATH="${PATH}:$HOME/bin"
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/thevinh/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
+
+# Golang PATH (GOPATH)
+export GOPATH=~/Projects/Golang
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -92,6 +95,8 @@ alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
 alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/.git/ --work-tree=$HOME'
 alias pwa='cd /run/media/thevinh/WORKS/PROJECTS/VNPT/00.SRC/pwa-his'
+alias notes='cd ~/Projects/notes'
+alias dotfiles='cd ~/Projects/dotfiles'
 
 #
 # ### Prompt components
@@ -99,7 +104,7 @@ alias pwa='cd /run/media/thevinh/WORKS/PROJECTS/VNPT/00.SRC/pwa-his'
 #
 # # Context: user@hostname (who am I and where am I)
 
-DEFAULT_USER=thevinh
+DEFAULT_USER=admin
  prompt_context() {
    local user=`whoami`
 
