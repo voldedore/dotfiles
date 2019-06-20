@@ -1,18 +1,24 @@
 ! Font
-URxvt.font: xft:Hack:pixelsize=12,xft:SauceCodePro Nerd Font Mono:size=9:antialias=true,xft:Inconsolata\ for\ Powerline
+URxvt.font: \
+	 xft:DejaVu Sans Mono for Powerline:style=Book:size=10, \
+	 xft:Inconsolata for Powerline:size=11, \
+	 xft:Noto Sans Mono:style=Medium:size=12, \
+	 xft:Hack:pixelsize=12, \
+	 xft:SauceCodePro Nerd Font Mono:size=9:antialias=true
 URxvt.letterSpace: -1
 
 ! Color
+URxvt.color1: #C0392B
+URxvt.color2: #11D116
+URxvt.color3: #FDBC4B
+URxvt.color4: #1D99F3
+URxvt.color7: #999999
 URxvt.depth: 32
 URxvt.background: [99]#232629
 URxvt.foreground: #FCFCFC
 URxvt.cursorColor: #7F8C8D
 URxvt.pointerColor: #000000
-URxvt.pointerColor2: color7
-URxvt.color1: #C0392B
-URxvt.color2: #11D116
-URxvt.color3: #FDBC4B
-URxvt.color4: #1D99F3
+URxvt.pointerColor2: #999999
 
 ! Disable scrollbar
 URxvt.scrollBar: false
@@ -20,4 +26,12 @@ URxvt.scrollBar: false
 ! Test ibus with urxvt
 URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
+
+! Disable scrollback position
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
 
