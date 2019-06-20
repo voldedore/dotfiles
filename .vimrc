@@ -56,6 +56,12 @@ Plugin 'dracula/vim'
 " You complete me
 Plugin 'Valloric/YouCompleteMe'
 
+" vim-go
+Plugin 'fatih/vim-go'
+
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-commentary'
+
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
