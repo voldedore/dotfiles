@@ -123,3 +123,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Dir colors
+eval `dircolors ~/.dir_colors/dircolors.256dark`
+export TERM=rxvt-unicode-256color
