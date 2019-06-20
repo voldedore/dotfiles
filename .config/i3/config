@@ -222,7 +222,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 bindsym Mod4+Escape exec ~/bin/lock.sh
 
 # Set wallpaper
-exec --no-startup-id sleep 3 && feh --bg-fill /home/thevinh/Pictures/Wallpapers/wallpaper.jpg /home/thevinh/Pictures/Wallpapers/wallpaper_v.png
+exec --no-startup-id sleep 3 && feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg ~/Pictures/Wallpapers/wallpaper_v.png
 
 # Assign applications to appropriate workspaces
 assign [class="Chromium"] 2
