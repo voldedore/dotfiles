@@ -226,7 +226,9 @@ exec --no-startup-id sleep 3 && feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jp
 
 # Assign applications to appropriate workspaces
 assign [class="Chromium"] 2
-assign [class="jetbrains-idea"] 1
+assign [class="jetbrains-idea" title="IntelliJ IDEA$"] 1
+assign [class="jetbrains-idea" title="^Project"] 3
+assign [class="jetbrains-idea" title="^Database"] 3
 assign [class="Spotify"] 0
 assign [class="Rambox"] 9
 assign [class="Telegram"] 9
@@ -235,6 +237,7 @@ assign [class="dolphin"] 8
 assign [class="google-chrome"] 2
 
 workspace "1" output HDMI1
+workspace "3" output HDMI1
 workspace "9" output HDMI1
 
 #bindsym $mod+x debuglog toggle
