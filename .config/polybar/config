@@ -280,6 +280,22 @@ interval = 0.5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
+format = <label> <bar-load>
+bar-load-width = 10
+bar-load-indicator = ─
+bar-load-indicator-foreground = #fff
+bar-load-indicator-font = 2
+bar-load-fill = ─
+bar-load-fill-font = 2
+bar-load-fill-foreground = #f90000
+bar-load-empty = ─
+bar-load-empty-font = 2
+bar-load-empty-foreground = ${colors.foreground-alt}
+bar-load-foreground-0 = #55aa55
+bar-load-foreground-1 = #557755
+bar-load-foreground-2 = #f5a70a
+bar-load-foreground-3 = #ff5555
+
 label =  %percentage:2%%
 
 [module/memory]
@@ -289,6 +305,22 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label =  %percentage_used%%
+format = <label> <bar-used>
+
+bar-used-width = 10
+bar-used-indicator = ─
+bar-used-indicator-foreground = #fff
+bar-used-indicator-font = 2
+bar-used-fill = ─
+bar-used-fill-font = 2
+bar-used-fill-foreground = #4bffdc
+bar-used-empty = ─
+bar-used-empty-font = 2
+bar-used-empty-foreground = ${colors.foreground-alt}
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
 
 [module/wlan]
 type = internal/network
