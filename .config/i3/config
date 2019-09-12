@@ -219,7 +219,7 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 # Lock screen shortkey
-bindsym Mod4+Escape exec ~/bin/lock.sh
+bindsym Mod4+Escape exec ~/Projects/dotfiles/bin/lock.sh
 
 # Set wallpaper
 exec --no-startup-id sleep 3 && feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg ~/Pictures/Wallpapers/wallpaper_v.png
