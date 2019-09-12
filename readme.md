@@ -2,7 +2,7 @@
 
 Master branch is deprecated, just for documentation.
 
-Switch to `linux` or `macos` branch for appropriate configuration.
+Switch to [`linux`](https://github.com/voldedore/dotfiles/tree/linux) or [`macos`](https://github.com/voldedore/dotfiles/tree/macos) branch for appropriate configuration.
 
 ## How to config:
 
