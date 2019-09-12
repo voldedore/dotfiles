@@ -59,7 +59,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = powermenu xwindow
 modules-center = 
-modules-right = wlan eth date 
+modules-right =  networkspeedlan networkspeedwlan wlan eth date 
 
 tray-position = right
 tray-padding = 2
@@ -359,6 +359,20 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/networkspeedlan]
+type = internal/network
+interval = 1
+interface = lan1
+
+label-connected =  %upspeed% |  %downspeed%
+
+[module/networkspeedwlan]
+type = internal/network
+interval = 1
+interface = wlp1s0
+
+label-connected =  %upspeed% |  %downspeed%
 
 [module/date]
 type = internal/date
