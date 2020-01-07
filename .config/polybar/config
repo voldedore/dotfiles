@@ -484,7 +484,7 @@ label-discharging = %percentage%% (%consumption%W)
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 1
 warn-temperature = 60
 
 format = <ramp> <label>
@@ -501,7 +501,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
 
 [module/powermenu]
 type = custom/menu
