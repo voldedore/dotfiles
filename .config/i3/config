@@ -273,6 +273,8 @@ for_window [class="Klipper"] floating enable; border none
 
 for_window [class="Plasmoidviewer"] floating enable; border none
 
+for_window [class="Conky"] floating enable
+
 ## Avoid auto focusing to plasma shell (especially when yarn start build success notification appears)
 
 no_focus [class="plasmashell"]
