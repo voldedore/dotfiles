@@ -1,0 +1,120 @@
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2019 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'Noto Sans:style=Regular:size=12',
+    gap_x = 60,
+    gap_y = 60,
+    minimum_height = 900,
+    minimum_width = 320,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 0.5,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+    xinerama_head = 1,
+    -- COLOR SETTINGS
+    default_color = 'AAAAAA',
+    default_shade_color = '333333',
+    -- default_outline_color = '111111',
+    default_outline_color = '010101',
+    color1 = '999999',
+    color2 = 'CCCCCC',
+    color3 = 'EEEEEE',
+    color4 = '444444',
+    color5 = '555555',
+    color6 = '666666',
+    -- FONT SETTINGS
+    font1 = 'Noto Sans:style=Regular:size=8',
+}
+
+conky.text = [[
+# Time
+${alignr}${color1}${font Noto Sans Light:style=Light:size=20}${time %H:%M:%S}${font}${color}${alignr}
+${voffset -19}
+${alignr}${font Noto Sans Light:style=Light:size=11}${time %A %d %B %Y}${font}${alignr}
+# Base info
+$hr
+${font1}${color1}KERNEL: ${color}${font}${alignr}$kernel $machine
+${font1}${color1}UPTIME: ${color}${font}${alignr}$uptime
+# Memory
+${font :size=11}${color1}MEMORY ${color6}${hr 2}${color}
+${font1}${color1}RAM: ${goto 130}USED:${color}${font} ${alignr}$mem ${goto 230}${font1}${color1}MAX:${color}${font} ${alignr} $memmax${font}
+${font1}${color1}SWAP: ${goto 130}USED:${color}${font} ${alignr}$swap ${goto 230}${font1}${color1}MAX:${color}${font} ${alignr} $swapmax${font}
+${color4}${memgraph 15,300, 32CD32 8B0000 -t}${color}
+${font1}${color1}RAM %:${color}${font} ${goto 100}$memperc% ${goto 150}${font1}${color1}SWAP %:${color}${font} ${alignr}$swapperc%
+# Processors
+${font :size=11}${color1}PROCESSORS ${color6}${hr 2}${color}
+${font1}${color1}CURRENTLY: ${color}${font}$freq MHz ${goto 170} $freq_g GHz
+${color4}${cpugraph 15,300, 32CD32 8B0000 -t}${color}
+${font1}${color1}CPU0-2: ${color}${font}  ${cpu cpu1}% ${goto 130} ${cpu cpu2}%  ${goto 220} ${cpu cpu3}%
+${font1}${color1}CPU3-5: ${color}${font}  ${cpu cpu4}% ${goto 130} ${cpu cpu5}%  ${goto 220} ${cpu cpu6}%
+${font1}${color1}CPU TEMPS: ${color}${font} ${hwmon 1 temp 1}°C | ${hwmon 1 temp 2}°C
+# File systems
+${font :size=11}${color1}FILE SYSTEMS ${color6}${hr 2}${color}
+ / (${fs_type /}): ${alignr}${fs_used /}/${fs_size /} 
+${fs_used_perc}% ${fs_bar 6 /}
+ /home (${fs_type /home}): ${alignr}${fs_used /home}/${fs_size /home} 
+${fs_used_perc /home}% ${fs_bar 6 /home}
+${font1}${color1}DISK IO: ${color}${font}${alignr}$diskio
+${font1}${color1}READ:${alignr}${diskiograph_read  15,210 ADFF2F 32CD32 750}
+${font1}${color1}WRITE:${alignr}${diskiograph_write  15,210 FF0000 8B0000 750}
+# Network
+${font :size=11}${color1}NETWORK ${color6}${hr 2}${color}
+${font1}${color1}LOCAL IP: ${color}${font}${alignr}${addr lan1} 
+${font1}${color1}UP:${color}${font} ${goto 80}${upspeed lan1} ${goto 150}${font1}${color1}DOWN:${color}${font} ${alignr}${downspeed lan1}
+${font1}${color1}UP:${alignr}${upspeedgraph lan1 15,210 ADFF2F 32CD32 -t}
+${font1}${color1}DOWN:${alignr}${downspeedgraph lan1 15,210 FF0000 8B0000 -t}${font}${color}
+${font1}${color1}NAME${goto 160}CPU%${goto 245}MEM%${font}${color}
+${top name 1}${goto 160}${top cpu 1}${goto 245}${top mem 1}
+${top name 2}${goto 160}${top cpu 2}${goto 245}${top mem 2}
+${top name 3}${goto 160}${top cpu 3}${goto 245}${top mem 3}
+${top name 4}${goto 160}${top cpu 4}${goto 245}${top mem 4}
+]]
