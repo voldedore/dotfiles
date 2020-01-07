@@ -14,7 +14,7 @@ URxvt.color3: #FDBC4B
 URxvt.color4: #1D99F3
 URxvt.color7: #999999
 URxvt.depth: 32
-URxvt.background: [99]#232629
+URxvt.background: [60]#232629
 URxvt.foreground: #FCFCFC
 URxvt.cursorColor: #7F8C8D
 URxvt.pointerColor: #000000
