@@ -33,3 +33,6 @@ By default, `conky` uses local configfile located at `$HOME/.conkyrc` for its se
 
     ln -s ~/.config/conky/.conkyrc ~/.conkyrc
     
+### i3wm
+
+You might want to install a compositor for additional feature like transparency of X clients. E.g: `xcompmgr`
