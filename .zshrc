@@ -127,3 +127,5 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Dir colors
 eval `dircolors ~/.dir_colors/dircolors.256dark`
 export TERM=rxvt-unicode-256color
+
+eval $(thefuck --alias)
