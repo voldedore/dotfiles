@@ -8,5 +8,11 @@ export QT_IM_MODULE=ibus
 #xrandr --output HDMI-0 --auto --rotate left
 xrandr --output DP-2 --auto --pos 0x0 --rotate left --output DP-3 --auto --pos 1080x800 --left-of DP-2
 
+# Disable hw speaker
 xset -b
 
+# Start ibus
+ibus-daemon -dxr
+
+# Start conky
+conky
