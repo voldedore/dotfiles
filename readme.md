@@ -35,7 +35,13 @@ By default, `conky` uses local configfile located at `$HOME/.conkyrc` for its se
     
 ### i3wm
 
-You might want to install a compositor for additional feature like transparency of X clients. E.g: `xcompmgr`
+You might want to install a compositor for additional feature like transparency of X clients. E.g: ~~`xcompmgr`~~ (this compositor might cause screentearing), `picom` (or `compton`).
+
+### i3lock
+
+The vanilla i3lock's appearance is quite boring with a snowwhite color when actived (screen locked). People tend to install the alternative: `i3lock-color`.
+
+In fact, you may have to install this in order to make `bin/lock.sh` executable.
 
 ### polybar
 
