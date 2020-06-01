@@ -129,3 +129,7 @@ eval `dircolors ~/.dir_colors/dircolors.256dark`
 export TERM=rxvt-unicode-256color
 
 eval $(thefuck --alias)
+
+# umask 077 this will set mode 7 for owners, 0, 0 for group and other. (chmod 700 default for creating new files)
+umask 077
+
