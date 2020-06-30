@@ -1,2 +1,11 @@
 ignore nodbus
 ignore nou2f
+whitelist /home/admin/.config/
+whitelist /home/admin/Documents/
+
+# Limit memory
+rlimit-as 8000000000
+
+#ignore private-dev
+#whitelist /dev/usb/
+
