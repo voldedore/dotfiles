@@ -93,7 +93,7 @@ alias vi="vim"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
-alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/.git/ --work-tree=$HOME'
+alias config='/usr/local/bin/git --git-dir=$HOME/dotfiles/.git/ --work-tree=$HOME'
 alias pwa='cd /run/media/thevinh/WORKS/PROJECTS/VNPT/00.SRC/pwa-his'
 alias notes='cd ~/Projects/notes'
 alias dotfiles='cd ~/Projects/dotfiles'
@@ -131,5 +131,5 @@ export TERM=rxvt-unicode-256color
 eval $(thefuck --alias)
 
 # umask 077 this will set mode 7 for owners, 0, 0 for group and other. (chmod 700 default for creating new files)
-umask 077
+#umask 077
 

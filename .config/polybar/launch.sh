@@ -10,7 +10,7 @@ if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     MONITOR=$m polybar --reload bottom &
     echo $m
-    if [ "$m" = DP-3 ]; then
+    if [ "$m" = LVDS-1 ]; then
 	MONITOR=$m polybar --reload top &
     fi
   done
