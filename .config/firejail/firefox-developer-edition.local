@@ -1,7 +1,9 @@
 ignore nodbus
 ignore nou2f
-whitelist /home/admin/.config/
-whitelist /home/admin/Documents/
+whitelist ${HOME}/.config/
+whitelist ${HOME}/Documents/
+#whitelist /run/media/
+ignore disable-mnt
 
 # Limit memory
 rlimit-as 8000000000
@@ -9,3 +11,4 @@ rlimit-as 8000000000
 #ignore private-dev
 #whitelist /dev/usb/
 
+env GTK_IM_MODULE=xim
