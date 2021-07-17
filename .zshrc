@@ -115,3 +115,10 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='‣ '
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# GPG config: Use GPG agent for SSH
+# Need: GPG Suite
+# Tested on macOS 11.4
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
