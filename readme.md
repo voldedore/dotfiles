@@ -31,6 +31,10 @@ To restore `.zshrc`, in `~`:
 
 ## Others settings
 
+### ZSH theme: Custom Powerline
+
+Install fonts: https://github.com/powerline/fonts
+
 ### Conky
 
 By default, `conky` uses local configfile located at `$HOME/.conkyrc` for its settings. This can be changed by recompiling from src. Or if you choose to stick to the default. Then create a link:
@@ -48,6 +52,8 @@ The vanilla i3lock's appearance is quite boring with a snowwhite color when acti
 In fact, you may have to install this in order to make `bin/lock.sh` executable.
 
 ### polybar
+
+- To install polybar, need: base-devel group of package.
 
 - The config of polybar displaying cpu temp may vary due to variety of hardware. 
 
