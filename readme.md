@@ -25,6 +25,10 @@ After this, you can use
 
 just like git command
 
+To restore `.zshrc`, in `~`:
+
+    config checkout .zshrc
+
 ## Others settings
 
 ### Conky
