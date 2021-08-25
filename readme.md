@@ -45,6 +45,8 @@ By default, `conky` uses local configfile located at `$HOME/.conkyrc` for its se
 
 You might want to install a compositor for additional feature like transparency of X clients. E.g: ~~`xcompmgr`~~ (this compositor might cause screentearing), `picom` (or `compton`).
 
+To screenshot, need `scrot` package. To screenshot and save to clipboard, need `xclip`.
+
 ### i3lock
 
 The vanilla i3lock's appearance is quite boring with a snowwhite color when actived (screen locked). People tend to install the alternative: `i3lock-color`.
