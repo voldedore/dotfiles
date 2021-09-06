@@ -158,3 +158,10 @@ In fact, you may have to install this in order to make `bin/lock.sh` executable.
                  Change this
     ```
     
+- To correctly display fonts: 
+
+	Install `ttf-font-awesome` package.
+
+- To display network info/speed, fix the network interface in /etc/udev/rules.d/ rules to `lan0` and `wlan0`.
+- To correctly display and control sound, install `pulseaudio-alsa` package.
+
