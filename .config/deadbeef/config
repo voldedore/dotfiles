@@ -191,7 +191,7 @@ playlist.tab.00007 Quick Search
 playlist.tab.00008 Quick Search
 prefwin.geometry.h 596
 prefwin.geometry.w 717
-prefwin.geometry.x 436
+prefwin.geometry.x -1438
 prefwin.geometry.y 101
 resume.paused 0
 resume.playlist -1
