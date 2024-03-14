@@ -4,11 +4,11 @@ Master branch is deprecated, just for documentation.
 
 Switch to [`linux`](https://github.com/voldedore/dotfiles/tree/linux) or [`macos`](https://github.com/voldedore/dotfiles/tree/macos) branch for appropriate configuration.
 
-## How to config for back up and restore to/from this repo:
+## How to config for backup and restore to/from this repo:
 
-Inspired from this article: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
+Inspired by this article: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 
-But, a little bit different: Clone the repo to
+But, a little bit different: Clone the repo to this location (you might want to clone the https repo URL since our configuration for SSH via gpg-agent is in the config).
 
     ~/dotfiles
 
@@ -16,6 +16,12 @@ Then
 
     alias config='/usr/bin/git --git-dir=$HOME/dotfiles/.git/ --work-tree=$HOME'
     config config --local status.showUntrackedFiles no
+
+Then checkout and create a local branch
+
+    ## If you already have a zshrc, move them first
+    mv ~/.zshrc ~/.zshrc_bk
+    config switch linux
 
 After this, you can use 
 
@@ -29,7 +35,7 @@ To restore `.zshrc`, in `~`:
 
     config checkout .zshrc
 
-## Others settings
+## Other settings
 
 ### ZSH theme: Custom Powerline
 
@@ -37,19 +43,19 @@ Install fonts: https://github.com/powerline/fonts
 
 ### Conky
 
-By default, `conky` uses local configfile located at `$HOME/.conkyrc` for its settings. This can be changed by recompiling from src. Or if you choose to stick to the default. Then create a link:
+By default, `conky` uses a local configfile located at `$HOME/.conkyrc` for its settings. This can be changed by recompiling from src. Or if you choose to stick to the default. Then create a link:
 
     ln -s ~/.config/conky/.conkyrc ~/.conkyrc
     
 ### i3wm
 
-You might want to install a compositor for additional feature like transparency of X clients. E.g: ~~`xcompmgr`~~ (this compositor might cause screentearing), `picom` (or `compton`).
+You might want to install a compositor for additional features like transparency of X clients. E.g.: ~~`xcompmgr`~~ (this compositor might cause screen tearing), `picom` (or `compton`).
 
 To screenshot, need `scrot` package. To screenshot and save to clipboard, need `xclip`.
 
 ### i3lock
 
-The vanilla i3lock's appearance is quite boring with a snowwhite color when actived (screen locked). People tend to install the alternative: `i3lock-color`.
+The vanilla i3lock's appearance is quite boring with a snow white color when activated (screen locked). People tend to install the alternative: `i3lock-color`.
 
 In fact, you may have to install this in order to make `bin/lock.sh` executable.
 
@@ -110,9 +116,9 @@ In fact, you may have to install this in order to make `bin/lock.sh` executable.
     Core 5:        +41.0°C  (high = +82.0°C, crit = +100.0°C)
     ```
     
-- Display in the right monitor
+- Display on the right monitor
 
-    In this config, there are 2 instances of polybar (one in the top and another in the bottom). The launch script (`launch.sh`) will check for each monitor and display the top one in ONLY one monitor. 
+    In this config, there are 2 instances of polybar (one in the top and another in the bottom). The launch script (`launch.sh`) will check for each monitor and display the top one on ONLY one monitor. 
     
     Adapt it by the output of `xrandr` (and of course, this required `xrandr` package).
     
