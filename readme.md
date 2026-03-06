@@ -100,3 +100,6 @@ As of 2026 March, I switched to Fedora 43 GNOME + Niri.
 vim is also replaced by neovim. 
 
 The custom theme of OMZ also removed and the default theme is used.
+
+Also, we changed to use fcitx5 for Vietnames typing.
+
