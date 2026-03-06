@@ -11,9 +11,9 @@ export GOPATH=~/Projects/Golang
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="custom-powerlevel9k/powerlevel9k"
+#ZSH_THEME="custom-powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +57,7 @@ ZSH_THEME="custom-powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion yarn)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,6 +81,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# GPG
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -93,10 +96,11 @@ alias vi="vim"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
-alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/.git/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/.git/ --work-tree=$HOME'
 alias pwa='cd /run/media/thevinh/WORKS/PROJECTS/VNPT/00.SRC/pwa-his'
 alias notes='cd ~/Projects/notes'
 alias dotfiles='cd ~/Projects/dotfiles'
+alias neofetch='fastfetch'
 
 #
 # ### Prompt components
@@ -125,11 +129,11 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Dir colors
-eval `dircolors ~/.dir_colors/dircolors.256dark`
-export TERM=rxvt-unicode-256color
+#eval `dircolors ~/.dir_colors/dircolors.256dark`
+#export TERM=rxvt-unicode-256color
 
 eval $(thefuck --alias)
 
 # umask 077 this will set mode 7 for owners, 0, 0 for group and other. (chmod 700 default for creating new files)
-umask 077
+#umask 077
 
