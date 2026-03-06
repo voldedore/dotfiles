@@ -92,7 +92,8 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias ll="ls -alh"
 alias l="ls -lh"
 alias zup="xrdb ~/.Xresources"
@@ -119,12 +120,12 @@ DEFAULT_USER=admin
 
 # Powerlevel9k theme customizations
 # NOTE: This is applied only to powerlevel9k theme
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='‣ '
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time)
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='‣ '
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable rbenv vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time)
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
